@@ -11,6 +11,7 @@
             <tr>
                 <th>Title</th>
                 <th>Description</th>
+                <th>Type</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,6 +20,7 @@
             <tr>
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->description }}</td>
+                <td>{{ $project->type ? $project->type->name : 'N/A' }}</td>
                 <td>
                     <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-info btn-sm">View</a>
                     <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning btn-sm">Edit</a>
