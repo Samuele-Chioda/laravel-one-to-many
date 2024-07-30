@@ -17,4 +17,15 @@
             <textarea name="description" id="description" class="form-control" required>{{ $project->description }}</textarea>
         </div>
         <div class="form-group mb-3">
-            <label for="type_id">Type
+            <label for="type_id">Type</label>
+            <select name="type_id" id="type_id" class="form-control">
+                <option value="">Select a Type</option>
+                @foreach($types as $type)
+                    <option value="{{ $type->id }}" {{ $project->type_id == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Project</button>
+    </form>
+</div>
+@endsection
