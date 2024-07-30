@@ -9,14 +9,13 @@ class Project extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'title',
-        'description',
-    ];
+    protected $fillable = ['title', 'description', 'type_id'];
 
+    /**
+     * Get the type that owns the project.
+     */
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
